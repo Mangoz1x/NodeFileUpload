@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Files</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/upload.css">
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/context-menu.css">
+        <link rel="stylesheet" href="/css/css-loaders.css">
+        <link rel="stylesheet" href="/css/file-stat.css">
+        <link rel="stylesheet" href="/css/audio.css">
+        <link rel="stylesheet" href="/css/err.css">
+        <link rel="stylesheet" href="/css/folder.css">
+    </head>
+    <body>
+        <div class="top-nav">
+            <a href="/logout" class="nav-btn">Logout</a>
+            <a href="/settings" class="nav-btn" style="margin-left: auto;">Settings</a>
+            <a href="/" class="nav-btn">Files</a>
+        </div>
+
+        <div class="dir-list">
+            <a href="" class="dir-btn">My Drive</a>
+        </div>
+
+        <div class="side-nav">
+            <div style="width: 100%; height: 65px;"></div>
+
+            <input type="file" id="file" multiple="true">
+            <button class="side-nav-def-btn" id="upload_selector">Upload</button>
+            <div class="border-side-nav-upl"></div>
+            <button class="side-nav-def-btn fullScreenTrigger">New Folder</button>
+            <div class="border-side-nav-upl"></div>
+
+            <div style="width: 100%; height: 25px;"></div>
+
+            <div class="border-side-nav-upl"></div>
+            <button class="side-nav-def-btn" onclick="newBlank();">Blank Canvas</button>
+            <div class="border-side-nav-upl"></div>
+            <button class="side-nav-def-btn" onclick="newTextDoc();">Blank Text Document</button>
+            <div class="border-side-nav-upl"></div>
+
+            <div class="storageSettings" id="storageSettings">
+                <div class="storageUsedContainer">
+                    <span id="storageUsedText"></span>
+                    <div id="storageUsed"></div>
+                </div>
+
+                <p id="storageStat"></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="side-nav-placeholder"></div>
+            <div class="main" id="drop_area" style="flex-direction: column;">
+                <div class="folder-container" id="folderContainer">
+                    <div class="center-loaders-con">
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+        
+                <div class="file-container" id="file-container">
+                    <div class="center-loaders-con">
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="file-overview-placeholder" id="overview-placeholder" style="display: none;"></div>
+        </div>
+
+        <div class="audio-container no-click-aud" id="audio-play-container" style="display: none;">
+            <div class="audio-inner-container no-click-aud">
+                <div class="aud-controls no-click-aud" id="aud-controls">
+                    <button id="play-pause" class="no-click-aud"><i class="fa fa-pause" aria-hidden="true"></i></button>
+                </div>
+                <div class="aud-duration no-click-aud">
+                    <input type="range" id="aud-duration" class="no-click-aud">
+                </div>
+                <div class="vol-dur-container no-click-aud">
+                    <div class="dur-container no-click-aud">
+                        <p id="dur-count" class="no-click-aud"></p>
+                    </div>
+                    <div class="vol-container no-click-aud" id="vol-container">
+                        <button id="aud-vol-btn" class="no-click-aud">VOL</button>
+                        <input type="range" id="aud-vol-range" class="no-click-aud" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="file-overview" id="file-overview" style="display: none;">
+            <div class="overview-topnav">
+                <p>Overview</p>
+                <button class="close-overview" onclick="closeOverview();">X</button>
+            </div>
+
+            <div class="info-container">
+                <h1 id="file_name">Undefined</h1>
+                <div class="label-container">
+                    <label class="label-info">MD5: <span id="file_md5"></span></label>
+                    <label class="label-info">Encoding: <span id="file_encoding"></span></label>
+                    <label class="label-info">Extension: <span id="file_extension"></span></label>
+                    <label class="label-info">Fileid: <span id="file_fileid"></span></label>
+                    <label class="label-info">DB-ID: <span id="file_dbid"></span></label>
+                    <label class="label-info">Mime: <span id="file_mime"></span></label>
+                    <label class="label-info">Size: <span id="file_size"></span></label>
+                </div>
+
+                <div class="file-interactive-options">
+                    <select id="selector_stat">
+                        <option value="private">Private</option>
+                        <option value="public">Public</option>
+                    </select>
+                    <a class="open_link" id="open_new_share" target="_blank">Open file in new window</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="upload-static" id="static-con" style="display: none;">
+            <div class="navigator-static" id="nav_stat">
+                <span id="upload-num">--</span>
+                <span class="minus-btn" id="btn_minus_switcher">--</span>
+            </div>
+            <div id="upload-static" style="display: flex;">
+
+            </div>
+        </div>
+
+        <nav id="context-menu" class="context-menu">
+            <ul class="context-menu__items">
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" id="pdfView" data-action="pdfView">View</a>
+                </li>
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" data-action="Open" id="open-text"></i>Open</a>
+                </li>
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" data-action="View" id="overview-task">Overview</a>
+                </li>
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" id="image-expand" data-action="Edit">Expand</a>
+                </li>
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" data-action="Copy" id="copy-context-btn">Copy</a>
+                </li>
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" data-action="Edit" id="edit-context-btn">Edit</a>
+                </li>
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" data-action="Download">Download</a>
+                </li>
+                <li class="context-menu__item">
+                    <a href="#" class="context-menu__link" data-action="Delete">Delete</a>
+                </li>
+            </ul>
+        </nav>
+
+        <script src="/js/cookie_data.js"></script>
+        <script src="/js/folder.js"></script>
+        <script src="/js/animations.js"></script>
+        <script src="/js/err.js"></script>
+        <script src="/js/publicityHandler.js"></script>
+        <script src="/js/handleAccStorage.js"></script>
+        <script src="/js/replace-audio.js"></script>
+        <script src="/js/file-stat.js"></script>
+        <script src="/js/context-menu.js"></script>
+        <script src="/js/upload.js"></script>
+    </body>
+</html>

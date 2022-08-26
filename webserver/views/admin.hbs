@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/css-loaders.css">
+        <link rel="stylesheet" href="/css/popup.css">
+        <link rel="stylesheet" href="/css/err.css">
+        <link rel="stylesheet" href="/css/admin.css">
+
+        <info id="users_data" style="display: none" data-users="{{users}}"></info>
+    </head>
+    <body>
+        <div class="top-nav">
+            <a href="/logout" class="nav-btn">Logout</a>
+            <a href="/settings" class="nav-btn" style="margin-left: auto;">Settings</a>
+            <a href="/" class="nav-btn">Files</a>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h1>Users</h1>
+
+                <div class="users" id="usersT">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            let users = document.getElementById("users_data");
+            users = users.getAttribute("data-users");
+            users = JSON.parse(users);
+
+            let usersT = document.getElementById("usersT");
+
+            for (let i = 0; i < users?.length; i++) {
+                let div = document.createElement("div");
+                div.classList.add("urow");
+
+                let tl = document.createElement("h2");
+                let fa = document.createElement("div");
+                let fc = document.createElement("div");
+                let at = document.createElement("div");
+                let br = document.createElement("div");
+                let cr = document.createElement("div");
+                let fn = document.createElement("div");
+                let ga = document.createElement("div");
+                let id = document.createElement("div");
+                let ml = document.createElement("div");
+                let pw = document.createElement("div");
+                let pis = document.createElement("div");
+                let pi = document.createElement("div");
+                let pu = document.createElement("div");
+                let ui = document.createElement("div");
+                let un = document.createElement("div");
+                let vc = document.createElement("div");
+                let vf = document.createElement("div");
+
+                tl.textContent = users?.[i]?.["username"];
+                fa.textContent = `2FA: ${users?.[i]?.["2fa"]}`;
+                fc.textContent = `2FA CODE: ${users?.[i]?.["2faCode"]}`;
+                at.textContent = `AUTH LEVEL: ${users?.[i]?.["authority"]}`;
+                br.textContent = `BIRTHDAY: ${users?.[i]?.["birthday"]}`;
+                cr.textContent = `CREATED: ${users?.[i]?.["created"]}`;
+                fn.textContent = `FULLNAME: ${users?.[i]?.["fullName"]}`;
+                ga.textContent = `GOOGLE-ACC: ${users?.[i]?.["googleAcc"]}`;
+                id.textContent = `ID: ${users?.[i]?.["id"]}`;
+                ml.textContent = `MAIL: ${users?.[i]?.["mail"]}`;
+                pw.textContent = `PASSWORD: ${users?.[i]?.["password"]}`;
+                pis.textContent = `PFPIMGSRC: ${users?.[i]?.["pfpImgSrc"]}`;
+                pi.textContent = `PRIVATE-ID: ${users?.[i]?.["privateId"]}`;
+                pu.textContent = `PUBLIC-ID: ${users?.[i]?.["publicId"]}`;
+                ui.textContent = `USER-ID: ${users?.[i]?.["userId"]}`;
+                un.textContent = `USERNAME: ${users?.[i]?.["username"]}`;
+                vc.textContent = `VERIFICATION: ${users?.[i]?.["verification"]}`;
+                vf.textContent = `VERIFIED: ${users?.[i]?.["verified"]}`;
+
+                div.appendChild(tl);
+                div.appendChild(fa);
+                div.appendChild(fc);
+                div.appendChild(at);
+                div.appendChild(br);
+                div.appendChild(cr);
+                div.appendChild(fn);
+                div.appendChild(ga);
+                div.appendChild(id);
+                div.appendChild(ml);
+                div.appendChild(pw);
+                div.appendChild(pis);
+                div.appendChild(pi);
+                div.appendChild(pu);
+                div.appendChild(ui);
+                div.appendChild(un);
+                div.appendChild(vc);
+                div.appendChild(vf);
+
+                usersT.appendChild(div);
+            }
+        </script>
+
+        <script src="/js/err.js"></script>
+        <script src="/js/popUp.js"></script>
+        <script src="/js/cookie_data.js"></script>
+    </body>
+</html>

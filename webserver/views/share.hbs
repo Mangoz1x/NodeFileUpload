@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Share</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/css-loaders.css">
+        <link rel="stylesheet" href="/css/popup.css">
+        <link rel="stylesheet" href="/css/share.css">
+        <link rel="stylesheet" href="/css/err.css">
+    </head>
+    <body>
+        <data-hidden identifier="file-data" style="display: none;">data-err={{err}},data-id={{query.id}},data-name={{query.name}},data-mime={{query.mime}},data-encoding={{query.encoding}},data-fileid={{query.fileid}},data-extension={{query.extension}}</data-hidden>
+
+        <div class="top-nav">
+            <a href="/logout" class="nav-btn">Logout</a>
+            <a href="/settings" class="nav-btn" style="margin-left: auto;">Settings</a>
+            <a href="/" class="nav-btn">Files</a>
+        </div>
+
+        <div id="image-container">
+            <div class="center-dis">
+                <div class="image file_identifier" id="image" style="display: none;">
+                    <img src="/render-api?fileid={{fileId}}&usp=sharing">
+                </div>
+                <div class="audio file_identifier" id="audio" style="display: none;">
+                    <audio controls="true" id="audio_controller" style="display: none;">
+                        <source src="/render-api?fileid={{fileId}}&usp=sharing" type="audio/ogg" id="replace-type">
+                        <source src="/render-api?fileid={{fileId}}&usp=sharing" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+
+                    <div class="audio-con">
+                        <div class="play-c" id="play">
+                            <i class="fa fa-play play-c" aria-hidden="true"></i>
+                        </div>
+                        <div id="time">
+                            <p id="time-stamp">0:00/0:01</p>
+                        </div>
+                        <div id="time-range">
+                            <div class="time-range-container" id="main-track">
+                                <div id="time-range-buffered"></div>
+                                <div id="time-range-played"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video file_identifier" id="video" style="display: none;">
+                    <video controls class="video-player">
+                        <source src="/render-api?fileid={{fileId}}&usp=sharing" type="video/mp4" id="replace-type-video">
+                        <source src="/render-api?fileid={{fileId}}&usp=sharing" type="video/ogg">
+                        Your browser does not support HTML video.
+                    </video>
+                </div>
+                <div class="text file_identifier" id="text" style="display: none;">
+
+                </div>
+                <div class="pdf file_identifier" id="pdf" style="display: none;">
+                    <embed src="/pdf-viewer/web/viewer.html?file=/render?fileid={{query.fileid}}&usp=sharing" class="pdf-embed"></embed>
+                </div>
+                <div class="err file_identifier" id="err" style="display: none;">
+                    <div class="err-container">
+                        <img src="/img/no-data.svg" class="img-err">
+                        <div class="data-text-container">
+                            <h1 id="errHeader">There was an error finding this file</h1>
+                            <p id="errCustomMsg">
+                                This error could occured due to the file being private,<br/>
+                                deleted, corrupt or removed due to violations of terms and<br/>
+                                community guidelines
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions-panel" id="actions-panel">
+                <div class="download-con">
+                    <a href="/render-api?fileid={{fileId}}&usp=sharing" download="{{query.name}}" title="download" class="download">
+                        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/err.js"></script>
+        <script src="/js/popUp.js"></script>
+        <script src="/js/share.js"></script>
+        <script src="/js/cookie_data.js"></script>
+    </body>
+</html>

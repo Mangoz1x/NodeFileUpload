@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/g-signin.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+    </head>
+    <body>
+        <div class="top-nav">
+            <a href="/signup" class="nav-btn">Signup</a>
+            <a href="/login" class="nav-btn">Login</a>
+        </div>
+
+        <div class="container">
+            <div class="login-container">
+                <div class="login-form">
+                    <div class="step-1">
+                        <h1 class="login--heading">LOGIN</h1>
+
+                        {{!-- <label class="input-label" for="username">Email</label> --}}
+                        <input type="text" class="input-form" id="username" placeholder="EMAIL" autocomplete="off">
+
+                        <div class="user-pwd-sep"></div>
+
+                        {{!-- <label class="input-label" for="password">Password</label> --}}
+                        <input type="password" class="input-form" id="password" placeholder="PASSWORD">
+                        
+                        <div class="other-signinOptions">
+                            <div id="g_id_onload"
+                                data-client_id="198499681155-691p76be8kc5r79vtbrtnib70f68joo8.apps.googleusercontent.com"
+                                data-context="signin"
+                                data-ux_mode="popup"
+                                data-login_uri="https://mangoz1x.com/login?googleLogin=true"
+                                data-auto_prompt="false">
+                            </div>
+
+                            <div class="g_id_signin"
+                                data-type="standard"
+                                data-shape="rectangular"
+                                data-theme="filled_blue"
+                                data-text="signin_with"
+                                data-size="large"
+                                data-logo_alignment="left"
+                                data-width="384">
+                            </div>
+                        </div>
+
+                        <div class="login--btn-manual">
+                            <button class="login-btn-next" id="next-pwd">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="step-3" style="display: none;">
+                        <label class="input-label" for="2fa">Authentication</label>
+                        <input type="text" class="input-form" id="2fa" placeholder="Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/cookie_data.js"></script>
+        <script src="/js/login.js"></script>
+        <script src="/js/signInHandler.js"></script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/signup.css">
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/g-signin.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+    </head>
+    <body>
+        <div class="top-nav">
+            <a href="/signup" class="nav-btn">Signup</a>
+            <a href="/login" class="nav-btn">Login</a>
+        </div>
+
+        <div class="container">
+            <div class="signup-container">
+                <div class="signup-form">
+                    <div class="step-1">
+                        <h1 class="signup--heading">SIGNUP</h1>
+
+                        <div class="area-signup-one" data-step="1">
+                            <input type="text" class="input-form" id="email" placeholder="EMAIL">
+                            <div class="user-pwd-sep"></div>
+                            <input type="text" class="input-form" id="name" placeholder="NAME">
+                        </div>
+                        <div class="area-signup-one" data-step="2" style="display: none;">
+                            <input type="text" class="input-form" id="username" placeholder="USERNAME" autocomplete="off">
+                            <div class="user-pwd-sep"></div>
+                            <input type="password" class="input-form" id="password" placeholder="PASSWORD">
+                            <div class="user-pwd-sep"></div>
+                            <input type="date" class="input-form" id="birthday" placeholder="birthday">
+                        
+                            <a id="backStep">Back</a>
+                        </div>
+                        
+                        {{!-- ERROR --}}
+                        <p id="err_msg" style="color: red; margin: 0; margin-top: 5px;" style="display: none;"></p>
+
+                        <div class="other-signinOptions">
+                            <div id="g_id_onload"
+                                data-client_id="198499681155-691p76be8kc5r79vtbrtnib70f68joo8.apps.googleusercontent.com"
+                                data-context="signin"
+                                data-ux_mode="popup"
+                                data-login_uri="https://mangoz1x.com/login?googleLogin=true"
+                                data-auto_prompt="false">
+                            </div>
+
+                            <div class="g_id_signin"
+                                data-type="standard"
+                                data-shape="rectangular"
+                                data-theme="filled_blue"
+                                data-text="signin_with"
+                                data-size="large"
+                                data-logo_alignment="left"
+                                data-width="384">
+                            </div>
+                        </div>
+
+                        <div class="signup--manual-click">
+                            <button class="signup-btn-next" id="signup-clickable">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    
+                        {{!-- <div data-step="1">1</div>
+                        <div data-step="2">2</div>
+                        <div data-step="3">3</div>
+                        <div data-step="4">4</div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/signInHandler.js"></script>
+        <script src="/js/cookie_data.js"></script>
+        <script src="/js/signup-test.js"></script>
+        {{!-- <script src="/js/signup.js"></script> --}}
+    </body>
+</html>

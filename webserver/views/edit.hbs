@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/css-loaders.css">
+        <link rel="stylesheet" href="/css/edit.css">
+        <link rel="stylesheet" href="/css/popup.css">
+        <link rel="stylesheet" href="/css/err.css">
+    </head>
+    <body>
+        <div class="top-nav">
+            <a href="/logout" class="nav-btn">Logout</a>
+            <a href="/settings" class="nav-btn" style="margin-left: auto;">Settings</a>
+            <a href="/" class="nav-btn">Files</a>
+        </div>
+
+        <div class="edit-container" id="main-edit-con">
+            <div class="toolbar" id="canvas-toolbar">
+                <input type="color" class="toolbar-color-picker" id="color-picker" title="Brush color">
+                <div class="toolbar-border"></div>
+                <input type="number" class="toolbar-depth-picker" id="line-depth" value="5" title="Brush size">
+                <div class="toolbar-border"></div>
+                <button class="toolbar-btn" onclick="reRender();" title="Reset canvas"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                <div class="toolbar-border"></div>
+                <button class="toolbar-btn" onclick="convertCanvasToBase();" title="Download"><i class='fa-solid fa-download'></i></button>
+                <div class="toolbar-border"></div>
+                <button class="toolbar-btn" onclick="reupload_image();" title="Save to new cloud file" id="reupload"><i class="fas fa-save"></i></button>
+                <div class="toolbar-border"></div>
+                <input type="number" class="toolbar-depth-picker" id="canvas-zoom" value="100" title="Canvas zoom" min="5" max="105">
+                <div class="toolbar-border"></div>
+                <div class="res-container">
+                    <input type="number" class="toolbar-depth-picker" id="canvas-width-res" value="1920" title="Canvas width resolution" style="width: 60px;" max="7680">
+                    <span>X</span>
+                    <input type="number" class="toolbar-depth-picker" id="canvas-height-res" value="1080" title="Canvas height resolution" style="width: 60px;" max="4320">
+                </div>
+            </div>
+            <div class="toolbar" id="doc-toolbar" style="display: none;">
+                <button class="toolbar-btn" onclick="window.location.reload();" title="Reset canvas"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                <div class="toolbar-border"></div>
+                <button class="toolbar-btn" onclick="downloadDoc();" title="Download"><i class='fa-solid fa-download'></i></button>
+                <div class="toolbar-border"></div>
+                <button class="toolbar-btn" onclick="saveDoc();" title="Save to new cloud file" id="reupload"><i class="fas fa-save"></i></button>
+            </div>
+            <div class="canvas-area">
+                <canvas id="canvas-edit"></canvas>
+            </div>
+            <div class="data-center-c" id="main-hide-n">
+                <div class="text-document">
+                    <div id="text-editable-doc" contenteditable="true">
+                        
+                    </div>
+                </div>
+                <div class="analyzer-results-placeholder">
+                </div>
+            </div>
+        </div>
+
+        <div class="analyzer-results">
+            <div class="analyzer-nav"><h1>Analyzer</h1></div>
+            <div class="search-box">
+                <input type="text" placeholder="Word..." id="analyzerSearch">
+                <input type="text" placeholder="Comment..." id="addComment" style="display: none;">
+                <div class="filters" id="analyze_filters">
+                    <button id="slideLeft" style="display: none;"><</button>
+                    <button id="s_definitions">Definitions</button>
+                    <button id="s_comments">Comments</button>
+                    <button id="s_places">Places</button>
+                    <button id="s_people">People</button>
+                    <button id="s_props">Props</button>
+                    <button id="s_time">Times</button>
+                    <button id="slideRight">></button>
+                </div>
+            </div>
+            <div class="aResults" id="aResults">
+
+            </div>
+            <div class="advanced-search">
+                <a href="#" id="advancedSearch" onclick="openAdvancedSearch();">Advanced Search</a>
+            </div>
+        </div>
+
+        <div class="FixedLoader" id="ring-fixed-loader">
+            <div class="lds-ring" style="margin-top: calc(65px + 43px);"><div></div><div></div><div></div><div></div></div>
+        </div>
+
+        <div class="advanced-search-container" id="advancedSearchContainer" style="display: none;">
+            <div class="advanced-search-inner no-close-click" id="advancedSearchInner">
+                <div class="advanced-search-title">
+                    <h2>Advanced Search</h2>
+                </div>
+                <div class="advanced-search-input">
+                    <input type="text" id="advanced-search-word" placeholder="Resting..."/>
+                    <button type="submit" id="manual-submit-search-word">Query</button>
+                </div>
+                <div class="advanced-search-api-results" id="searchApiResults">
+                    <h3 style="color: #eee; margin: 0; margin-top: 5px;">Word: <b id="apiWord"></b></h3>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Definition: <span id="apiDefinition"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Type/Part Of Speech: <span id="apiType"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Synonyms: <span id="apiSynonyms"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Type Of: <span id="apiTypeOf"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Has Types: <span id="apiHasTypes"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Derivation(s): <span id="apiDerivation"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Syllables: <span id="apiSyllables"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                    <label>Pronunciation: <span id="apiPronunciation"></span></label>
+                    <div class="advanced-search-api-results-border"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/js/err.js"></script>
+        <script src="/js/popUp.js"></script>
+        <script src="/js/cookie_data.js"></script>
+        <script src="/js/edit.js"></script>
+        <script src="/js/analyze.js"></script>
+        <script src="/js/advancedSearch.js"></script>
+    </body>
+</html>

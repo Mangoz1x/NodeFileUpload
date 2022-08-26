@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/css-loaders.css">
+        <link rel="stylesheet" href="/css/popup.css">
+        <link rel="stylesheet" href="/css/dl-css.css">
+    </head>
+    <body>
+        {{#if logged}}
+            <div class="top-nav">
+                <a href="/logout" class="nav-btn">Logout</a>
+                <a href="/settings" class="nav-btn" style="margin-left: auto;">Settings</a>
+                <a href="/" class="nav-btn">Files</a>
+            </div>
+        {{else}}
+            <div class="top-nav">
+                <a href="/signup" class="nav-btn">Signup</a>
+                <a href="/login" class="nav-btn">Login</a>
+            </div>
+        {{/if}}
+
+        <div class="container-dl">
+            <div class="dl-r-one">
+                <h1>Download VClip</h1>
+            </div>
+            <div class="dl-r-p">
+                <p>
+                    VClip allows you to have your clipboard with you
+                    no matter what device you are on. VClip will let you
+                    store images and all images will be uploaded directly
+                    to your account. 
+                </p>
+            </div>
+            <div class="dl-r-two">
+                <a href="/dl?q=VClip&plat=win32" download="vclip.zip">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <script src="/js/popUp.js"></script>
+        <script src="/js/cookie_data.js"></script>
+    </body>
+</html>

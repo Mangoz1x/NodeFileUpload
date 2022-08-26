@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mangoz1x - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/css/sidenav.css">
+        <link rel="stylesheet" href="/css/css-loaders.css">
+        <link rel="stylesheet" href="/css/popup.css">
+        <link rel="stylesheet" href="/css/settings.css">
+    </head>
+    <body>
+        <div class="top-nav">
+            <a href="/logout" class="nav-btn">Logout</a>
+            <a href="/settings" class="nav-btn" style="margin-left: auto;">Settings</a>
+            <a href="/" class="nav-btn">Files</a>
+        </div>
+
+        <input type="file" id="pfpInput" style="display: none;"> 
+
+        <div class="container">
+            <div class="main-con">
+                <div class="nav-set" id="nav-id">
+                    <div class="user-settings-nav">
+                        <label>USER SETTINGS</label>
+                        <button data-linked="0">Account</button>
+                        <button data-linked="1">Authentication</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="section" data-page="0">
+                        <div class="main-pfp-container">    
+                            <div class="area-1">
+                                <p id="pfpErr" style="display: none;"></p>
+                                <div class="pfp_aligner">
+                                    <div class="profile-pic-container" id="profilePicContainerAppender">
+                                        {{#if pfpSrc}}
+                                            <p id="pfpImage" style="display: none;"></p>
+                                            <p class="image-text" id="pfpImageText" style="display: none;">Change</p>
+                                            <img src="{{pfpSrc}}" alt="Profile picture" referrerpolicy="no-referrer" />
+                                        {{else}}
+                                            <img src="" id="pfpImage" alt="Profile picture" class="image-hover-trans" />
+                                            <p class="image-text" id="pfpImageText">Change</p>
+                                        {{/if}} 
+                                    </div>
+                                    <h1>{{username}}</h1>
+                                </div>
+                            </div>
+                            <div class="area-2">
+                                <div class="account_data_container">
+                                    <div class="info-container">
+                                        <b>Username</b>
+                                        <label id="username"></label>
+
+                                        <div style="height: 20px; width: 100%;"></div>
+                                        
+                                        <b>Name</b>
+                                        <label id="vname"></label>
+                                        
+                                        <div style="height: 20px; width: 100%;"></div>
+
+                                        <b>Email</b>
+                                        <label id="mail"></label>
+                                        
+                                        <div style="height: 20px; width: 100%;"></div>
+
+                                        <b>Birthdate</b>
+                                        <label id="birthdate"></label>
+                                        
+                                        <div style="height: 20px; width: 100%;"></div>
+
+                                        <b>Account creation date</b>
+                                        <label id="created"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-section"></div>
+
+                        <div class="danger-zone">
+                            <h2>Danger Zone</h2>
+
+                            <div class="delete-account">
+                                <p>
+                                    By deleting your account we will be permanently
+                                    removing all your data from our servers. 
+                                </p>
+                                <a href="#delete-account" id="delete_account">Delete Account</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section" data-page="1" style="display: none;">
+                        <h2>AUTHENTICATION</h2>
+                        <p data-contains="authentication" style="color: rgb(73, 167, 73);">
+                            Using 2FA (Two Factor Authentication) Will send you a<br/> 
+                            verification code whenever a login is attempted.
+                        </p>
+
+                        <button id="twofaStat">---------</button>
+                    </div>
+                    <div class="space-75px"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="delete-account-container" id="uniqueid-194325" style="display: none; opacity: 0; transition: 0.3s;">
+            <div class="main-insl">
+                <h2>Confirm Account Deletion</h2>
+                <p>
+                    Please enter the confirmation code sent<br/>
+                    to your email
+                </p>
+                <div style="display: flex;">
+                    <input type="password" id="confirm_password" placeholder="Code">
+                    <button id="submit_confirm_pwd">Confirm</button>
+                </div>
+                <span style="color: red; padding-top: 5px; display: block;" id="pwd-ver-err"></p>
+            </div>
+        </div>
+
+        <script src="/js/cookie_data.js"></script>
+        <script src="/js/deleteAcc.js"></script>
+        <script src="/js/popUp.js"></script>
+        <script src="/js/settings.js"></script>
+    </body>
+</html>
