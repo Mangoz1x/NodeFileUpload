@@ -1,0 +1,59 @@
+{
+    "nouns": {
+        "miss": {
+            "exists": true,
+            "gender": "female",
+            "links": ["mrs", "girl", "female", "she", "her"]
+        },
+        "mister": {
+            "exists": true,
+            "gender": "male",
+            "links": ["mr", "boy", "guy", "male", "him", "his"]
+        },
+        "mrs": {
+            "exists": true,
+            "gender": "female",
+            "links": ["miss", "girl", "she", "female", "her"]
+        },
+        "mr": {
+            "exists": true,
+            "gender": "male",
+            "links": ["mister", "boy", "guy", "male", "him", "his"]
+        },
+        "girl": {
+            "exists": true,
+            "gender": "female",
+            "links": ["miss", "girl", "female", "her", "she"]
+        },
+        "boy": {
+            "exists": true,
+            "gender": "male",
+            "links": ["mister", "guy", "male", "him", "his"]
+        },
+        "female": {
+            "exists": true,
+            "gender": "female",
+            "links": ["miss", "girl", "her", "she"]
+        },
+        "male": {
+            "exists": true,
+            "gender": "male",
+            "links": ["mister", "boy", "him", "his", "guy"]
+        },
+        "her": {
+            "exists": true,
+            "gender": "female",
+            "links": ["miss", "girl", "she"]
+        },
+        "his": {
+            "exists": true,
+            "gender": "male",
+            "links": ["mister", "boy", "him", "guy"]
+        },
+        "guy": {
+            "exists": true,
+            "gender": "male",
+            "links": ["mister", "boy", "him", "his"]
+        }
+    }
+}
