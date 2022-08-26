@@ -27,13 +27,13 @@ exports.mail = function mail(to, subject, message) {
         service: 'gmail',
         secure: true,
         auth: {
-            user: 'stvmovyt@gmail.com',
-            pass: 'oqmpspolhvcnqwnv'
+            user: 'email@gmail.com',
+            pass: 'email-password'
         }
     });
     
     let mailOptions = {
-        from: 'stvmovyt@gmail.com',
+        from: 'youremail',
         to: to,
         subject: subject,
         html: message
