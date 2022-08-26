@@ -1,0 +1,153 @@
+.audio-container {
+    width: calc(100vw - 5px);
+    height: fit-content;
+    background-color: #111;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #222;
+    z-index: 9999999;
+    display: flex;
+}
+
+.audio-inner-container {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.aud-controls {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding-right: 25px;
+}
+
+.aud-duration {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.vol-dur-container {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.vol-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* AUDIO DURATION INPUT */
+#aud-vol-btn {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #111;
+    color: #eee;
+    font-size: 20px;
+}
+
+#play-pause {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #111;
+    color: #eee;
+    font-size: 20px;
+}
+
+#dur-count {
+    margin: 0;
+}
+
+.dur-container {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aud-duration input {
+    width: 100% !important;
+    -webkit-appearance: none;  
+    appearance: none;
+    height: 10px; 
+    background: #666;
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+    border-radius: 40px;
+}
+
+.aud-duration input:hover {
+    transition: opacity .2s;
+    opacity: 1;
+}
+
+.aud-duration input::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 13px; 
+    height: 13px; 
+    background: #fff; 
+    cursor: pointer; 
+    border-radius: 100%;
+}
+  
+.aud-duration input::-moz-range-thumb {
+    width: 13px; 
+    height: 13px;
+    background: #fff; 
+    cursor: pointer; 
+    border-radius: 100%;
+}
+
+/* VOL INPUT RANGE */
+.vol-container input {
+    width: 100px !important;
+    -webkit-appearance: none;  
+    appearance: none;
+    height: 10px; 
+    background: #666;
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+    border-radius: 40px;
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
+.vol-container input:hover {
+    transition: opacity .2s;
+    opacity: 1;
+}
+
+.vol-container input::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 13px; 
+    height: 13px; 
+    background: #fff; 
+    cursor: pointer; 
+    border-radius: 100%;
+}
+  
+.vol-container input::-moz-range-thumb {
+    width: 13px; 
+    height: 13px;
+    background: #fff; 
+    cursor: pointer; 
+    border-radius: 100%;
+}

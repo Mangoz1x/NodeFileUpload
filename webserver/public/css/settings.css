@@ -1,0 +1,358 @@
+* , *:before, *:after{ 
+    box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    -webkit-box-sizing:border-box; 
+    -ms-box-sizing:border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+.space-75px {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.nav-set {
+    width: 300px;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    background-color: 300px;
+    border-right: 1px solid #222;
+}
+
+.user-settings-nav {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.user-settings-nav label {
+    color: #ccc;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.nav-set button {
+    width: 100%;
+    height: fit-content;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    color: #eee;
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.nav-set button:hover {
+    background-color: #222 !important;
+}
+
+.container {
+    width: 100%;
+    height: calc(100vh - 65px);
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-con {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.section {
+    border-bottom: 1px solid #333;
+    /* border-radius: 3px; */
+    width: 100%;
+    min-height: 50px;
+    height: fit-content;
+    padding: 20px;
+    /* -webkit-box-shadow: 0px 0px 15px 0px rgba(90, 90, 90, 0.15); 
+    box-shadow: 0px 0px 15px 0px rgba(90, 90, 90, 0.15); */
+}
+
+.main-pfp-container {
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(18, 108, 197);
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.area-1 {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+}
+
+.account_data_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.area-2 {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    background-color: #222;
+}
+
+.pfp_aligner {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.pfp_aligner h1 {
+    margin-left: 20px;
+    color: #eee;
+}
+
+.section h2, p {
+    margin: 0;
+    color: rgb(200, 200, 200);
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.section button {
+    background-color: #161616;
+    border: 1px solid #222;
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: #eee;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.section button:hover {
+    background-color: #191919;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container b {
+    color: rgb(177, 177, 177);
+    font-size: 15px;
+}
+
+.info-container label {
+    color: #eee;
+    margin-top: 2px;
+    font-size: 17px;
+}
+
+.profile-pic-container {
+    width: 100px;
+    height: 100px;
+    overflow: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    position: relative;
+}
+
+.profile-pic-container img {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    transition: 0.3s;
+}
+
+.profile-pic-container .image-hover-trans:hover {
+    filter: brightness(50%);
+    transition: 0.3s;
+}
+
+.image-text {
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.profile-pic-container:hover .image-text, .image-text:hover .image-text {
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+#pfpErr {
+    color: red;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgb(20, 20, 20);
+    border: 1px solid #242424;
+}
+
+.border-section {
+    border-bottom: 1px solid #222;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.danger-zone {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: #eee;
+    border-radius: 3px;
+}
+
+.danger-zone h2 {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    color: red;
+    font-size: 22px;
+}
+
+.delete-account {
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-account p {
+    max-width: 400px;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.delete-account a {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(209, 12, 12);
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+.delete-account a:hover {
+    background-color: rgb(153, 15, 15);
+    transition: 0.3s;
+}
+
+.delete-account-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999999999999999999999999999999;
+}
+
+.main-insl {
+    width: fit-content;
+    height: fit-content;
+    background-color: #222;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.main-insl h2 {
+    margin: 10px;
+    color: #eee;
+    font-size: 20px;
+    margin-left: 0;
+}
+
+.main-insl input {
+    color: #eee;
+    background-color: #181818;
+    border: 1px solid #444;
+    border-radius: 3px;
+    padding: 5px 10px;
+    outline: none;
+    transition: 0.1s border;
+}
+
+.main-insl input:focus {
+    border: 1px solid #111;
+    transition: 0.1s border;
+}
+
+.main-insl button {
+    background-color: #181818;
+    border: 1px solid #444;
+    border-radius: 3px;
+    color: red;
+    margin-left: 5px;
+    transition: 0.1s;
+}
+
+.main-insl button:hover {
+    background-color: #141414;
+    transition: 0.1s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #222;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #333;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

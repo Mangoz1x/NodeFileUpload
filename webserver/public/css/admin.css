@@ -1,0 +1,43 @@
+body {
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: calc(100vh - 65px);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+}
+
+.container .section {
+    width: 100%;
+    height: fit-content;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    color: #eee;
+}
+
+.urow {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    background-color: #222;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.urow div {
+    font-size: 17px;
+    margin: 3px;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}

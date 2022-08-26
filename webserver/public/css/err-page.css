@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #111;
+    color: #eee;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 110px;
+    margin: 0;
+}
+
+.container a {
+    color: dodgerblue;
+    font-size: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,40 @@
+.popup-custom {
+    position: fixed;
+    bottom: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #222;
+    border: 1px solid #333;
+    left: 50%;
+    transform: translate(-50%);
+    color: #eee;
+    font-size: 17px;
+}
+
+.fade-up {
+    animation: fade-up 0.5s forwards;
+}
+
+.fade-down {
+    animation: fade-down 0.5s forwards; 
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        margin-bottom: -200px;
+    } 100% {
+        opacity: 1;
+        margin-bottom: 0;
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 1;
+        margin-bottom: 0;
+    } 100% {
+        opacity: 0;
+        margin-bottom: -200px;
+    }
+}

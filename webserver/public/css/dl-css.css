@@ -1,0 +1,57 @@
+.container-dl {
+    margin-top: 65px;
+    height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dl-r-one {
+    width: 100%;
+    text-align: center;
+    color: #eee;
+    font-size: 60px;
+}
+
+.dl-r-one h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dl-r-two {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dl-r-p {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.dl-r-p p {
+    color: #eee;
+    font-size: 20px;
+    margin: 0;
+    max-width: 70vw;
+}
+
+.dl-r-two a {
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #222;
+    color: #eee;
+    text-decoration: none;
+    outline: none;
+    transition: 0.1s;
+}
+
+.dl-r-two a:hover {
+    transition: 0.1s;
+    background-color: rgb(24, 24, 24);
+}

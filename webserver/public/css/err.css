@@ -1,0 +1,88 @@
+.err-dimmer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999999999999999999999999;
+}
+
+.err-inner {
+    width: 50vw;
+    height: 20vh;
+    padding: 30px;
+    background-color: #111;
+    border: 1px solid #222;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.err-mesg {
+    color: red;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.err-dism {
+    color: #eee;
+    text-decoration: none;
+    margin: 0;
+    transition: 0.3s color;
+}
+
+.err-dism:hover {
+    transition: 0.3s color;
+    color: #ddd;
+}
+
+.err-animate-out {
+    animation: animateDimmerOut 0.3s forwards;
+}
+
+.err-animate-in {
+    animation: animateDimmerIn 0.3s forwards;
+}
+
+@keyframes animateInnerIn {
+    0% {
+        transform: scale(0.8);
+    } 100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes animateInnerOut {
+    0% {
+        transform: scale(1);
+    } 100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes animateDimmerOut {
+    0% {
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateDimmerIn {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}

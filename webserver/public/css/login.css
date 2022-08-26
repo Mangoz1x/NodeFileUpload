@@ -1,0 +1,124 @@
+.container {
+    width: 100vw;
+    height: calc(100vh - 65px);
+    margin-top: 65px;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 30rem;
+    height: fit-content;
+    border-radius: 3px;
+    border: 1px solid #222;
+    display: flex;
+}
+
+.login-form {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgb(20, 20, 20);
+    padding: 4.489001945234176rem 2.992667963489451rem 2.992667963489451rem;
+}
+
+.login--heading {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 4rem;
+    color: #eee;
+    font-size: 40px;
+}
+
+.input-label {
+    color: white;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.input-form {
+    padding: 15px 14px;
+    background-color: rgb(30, 30, 30);
+    border: 1px solid #222;
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+    color: #eee;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: 0.15s border;
+}
+
+.input-form:focus {
+    border: 2px solid #010101;
+    transition: 0.15s border;
+}
+
+.user-pwd-sep {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.login--btn-manual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.login-btn-next {
+    width: fit-content;
+    padding: 24px 28px;
+    color: #eee;
+    background-color: #111;
+    border-radius: 25px;
+    border: 1px solid #222;
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.step-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.step-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-next {
+    animation: slide-next 0.3s forwards;
+}
+
+.slide-in {
+    animation: slide-in 0.3s forwards;
+}
+
+@keyframes slide-next {
+    0% {
+        transform: scale(1);
+    } 100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    } 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

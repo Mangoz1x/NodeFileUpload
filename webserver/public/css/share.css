@@ -1,0 +1,186 @@
+#image-container {
+    width: 100%;
+    height: calc(100vh - 65px);
+    margin-top: 65px;
+    display: flex;
+}
+
+.actions-panel {
+    min-width: 70px;
+    width: 70px;
+    height: 100%;
+    background-color: #111;
+    border-left: 1px solid #222;
+    margin-left: auto;
+}
+
+.download-con {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #222;
+}
+
+.download-con:hover .download {
+    color: #ccc;
+}
+
+.download {
+    text-align: center;
+    font-size: 20px;
+    color: #eee;
+}
+
+.center-dis {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-con {
+    width: 70vw;
+    height: 70px;
+    background-color: #222;
+    display: flex;
+    border-radius: 3px;
+}
+
+.audio-con #play {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    padding: 30px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.audio-con #time {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    padding: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.audio-con #time-range {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    padding: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.audio-con #time p {
+    padding-top: 2px;
+}
+
+.audio-con .time-range-container {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #444;
+}
+
+.audio-con #time-range-buffered {
+    height: 100%;
+    background-color: #666;
+    position: absolute;
+}
+
+.audio-con #time-range-played {
+    height: 100%;
+    background-color: dodgerblue;
+    position: absolute;
+}
+
+.image {
+    max-width: 93vw;
+    max-height: 93vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image img {
+    max-width: 93vw;
+    max-height: 93vh;
+    width: 98%;
+    height: 98%;
+}
+
+.err {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.err-container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.err h1 {
+    color: #eee;
+    margin: 0;
+}
+
+.err p {
+    color: rgb(189, 189, 189);
+}
+
+.data-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-err {
+    width: 20vw;
+    height: 20vh;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-player {
+    max-width: 98% !important;
+    max-height: 98% !important;
+}
+
+.pdf {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-embed {
+    width: 100%;
+    height: 100%;
+}
